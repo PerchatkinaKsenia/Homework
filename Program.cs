@@ -220,3 +220,74 @@ int ReadInt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 */
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+/*
+void GetDegree(int A, int B)
+{
+    int res = 1;
+    for (int i = 0; i < B; i++)
+    {
+        res *= A;
+    }
+    Console.WriteLine($"{A}, {B} -> {res}");
+}
+Console.Write("base number ");
+int A = Convert.ToInt32(Console.ReadLine());
+Console.Write("degree number ");
+int B = Convert.ToInt32(Console.ReadLine());
+GetDegree(A, B);
+*/
+//Задача 27 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
+int WriteWait(string outLine)
+{
+    Console.Write(outLine);
+    int inNumber = Convert.ToInt32(Console.ReadLine());
+    return inNumber;
+}
+int Sum(int inNumber)
+{
+    int outSum = 0;
+    for (int tempNumber = inNumber; tempNumber > 0; tempNumber /= 10)
+        outSum += tempNumber % 10;
+    return outSum;
+}
+
+int number=WriteWait("Input a number ");
+Console.WriteLine($"sum of digits {number} = {Sum(number)}");
+*/
+//Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
+
+int[] CreateArr(int m, int valMin, int valMax)
+{
+    int[] arr = new int[m];
+    for (int i = 0; i < m; i++)
+    {
+        arr[i] = new Random().Next(valMin, valMax + 1);
+    }
+    return arr;
+}
+void WriteArr(int[] arr)
+{
+    Console.Write(arr[0]);
+    for (int i = 1; i < arr.Length; i++)
+    {
+        Console.Write($", {arr[i]}");
+    }
+    Console.Write($" - > [{arr[0]}");
+    for (int i = 1; i < arr.Length; i++)
+    {
+        Console.Write($", {arr[i]}");
+    }
+    Console.Write("]");
+    Console.WriteLine();
+}
+Console.Write("m ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("value min ");
+int valMin = Convert.ToInt32(Console.ReadLine());
+Console.Write("value max ");
+int valMax = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateArr(n, valMin, valMax);
+WriteArr(myArray);
